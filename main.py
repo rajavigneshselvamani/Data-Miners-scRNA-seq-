@@ -30,10 +30,8 @@ print("=============Birch-Clustering================")
 birch_model = Birch(branching_factor = 100, n_clusters=16, threshold=2)
 birch_model.fit(gene_data)
 
-#Birch_Prediction = birch_model.predict(gene_data).tolist()
 Birch_Prediction = birch_model.predict(y).tolist()
 BSil_score = silhouette_score(gene_data, birch_model.labels_, metric='euclidean')
-#CHS=calinski_harabasz_score(gene_data, birch_model.labels_)
 url = "https://www.csci555competition.online/scoretest"
 print('Loading Predictions to API..')
 payload_MShift = json.dumps([Birch_Prediction])
