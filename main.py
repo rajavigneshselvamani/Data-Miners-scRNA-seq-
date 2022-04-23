@@ -2,17 +2,11 @@ import json
 import requests
 import pandas as pd
 import numpy as np
-#from sklearn import metrics
 from sklearn.cluster import Birch
-#from sklearn.cluster import KMeans
-#from sklearn.metrics import calinski_harabasz_score
 from sklearn.metrics import silhouette_score
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler
-#from sklearn.cluster import MeanShift
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.decomposition import IncrementalPCA
-#from sklearn.cluster import AgglomerativeClustering
+
 
 #Data File read
 gene_train = pd.read_table(r"/content/drive/MyDrive/Clustering_competition/data_tr.txt", header=None)
@@ -51,4 +45,4 @@ response = requests.request("POST", url, headers=headers, data=payload_MShift)
 print('=======Result==========')
 print('Birch Accuracy Result: %', response.text)
 print('Birch Silhouette Score: %.3f' % BSil_score)
-#print('Birch Calinski_haraba Score: %.3f' % CHS)
+
